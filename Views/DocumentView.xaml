@@ -1,0 +1,38 @@
+<UserControl x:Class="wpf_projcts.Views.DocumentView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" MinWidth="240"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="3*" MinWidth="240"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="Editor"
+                 Grid.Column="0"
+                 Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"
+                 AcceptsReturn="True"
+                 AcceptsTab="True"
+                 TextWrapping="NoWrap"
+                 FontFamily="Consolas"
+                 FontSize="14"
+                 Padding="8"
+                 BorderThickness="0"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 ScrollViewer.ScrollChanged="Editor_ScrollChanged"
+                 SelectionChanged="Editor_SelectionChanged"/>
+
+        <GridSplitter Grid.Column="1"
+                      Width="6"
+                      HorizontalAlignment="Stretch"
+                      Background="{x:Static SystemColors.ControlLightBrush}"/>
+
+        <FlowDocumentScrollViewer x:Name="Preview"
+                                  Grid.Column="2"
+                                  Document="{Binding PreviewDocument}"
+                                  VerticalScrollBarVisibility="Auto"
+                                  HorizontalScrollBarVisibility="Disabled"
+                                  Background="#FBFBFB"/>
+    </Grid>
+</UserControl>

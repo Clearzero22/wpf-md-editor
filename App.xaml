@@ -1,0 +1,13 @@
+﻿<Application x:Class="wpf_projcts.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:wpf_projcts"
+             xmlns:vm="clr-namespace:wpf_projcts.ViewModels"
+             xmlns:views="clr-namespace:wpf_projcts.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vm:DocumentViewModel}">
+            <views:DocumentView/>
+        </DataTemplate>
+    </Application.Resources>
+</Application>
